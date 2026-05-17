@@ -1,0 +1,37 @@
+{
+    "name": "tours-and-travels",
+    "version": "1.0.0",
+    "description": "A modern, responsive tours and travels booking website built with HTML5, CSS3, Bootstrap 5, and Vanilla JavaScript.",
+    "main": "index.html",
+    "scripts": {
+        "start": "python -m http.server 8000",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "tours",
+        "travels",
+        "booking",
+        "vacation",
+        "trips",
+        "destinations"
+    ],
+    "author": "Tours & Travels",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yourusername/tours-and-travels"
+    },
+    "homepage": "https://yourdomain.com",
+    "engines": {
+        "node": ">=14.0.0"
+    },
+    "devDependencies": {
+        "clean-css-cli": "^5.6.0",
+        "terser": "^5.16.0"
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead"
+    ]
+}

@@ -1,0 +1,52 @@
+Contact: security@your-domain.com
+Expires: 2027-05-17T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://your-domain.com/.well-known/security.txt
+
+# Security Policy for Tours & Travels
+
+## Reporting Security Issues
+
+If you discover a security vulnerability in this website, please email us at:
+**security@your-domain.com**
+
+Please do NOT:
+- Publicly disclose the vulnerability before we have had a chance to fix it
+- Access more data than necessary to confirm the vulnerability
+- Use the vulnerability to access systems or data belonging to others
+- Perform testing that could degrade or disrupt service availability
+
+## What We Promise
+
+- We will respond to security reports within 48 hours
+- We will work to fix confirmed vulnerabilities promptly
+- We will acknowledge your responsible disclosure (if desired)
+- We will keep you informed of the fix timeline
+
+## Scope
+
+This policy applies to:
+- https://your-domain.com
+- All subdomains under your-domain.com
+
+Out of scope:
+- Third-party services and websites
+- Infrastructure not controlled by Tours & Travels
+
+## Vulnerability Disclosure Timeline
+
+- Day 1: We acknowledge receipt of your report
+- Day 1-7: We investigate and confirm the vulnerability
+- Day 7-30: We develop and test a fix
+- Day 30+: We deploy the fix and notify you
+
+## PGP Key (Optional)
+
+If you prefer encrypted communication, you can use our public PGP key:
+[Add your PGP public key here or link to it]
+
+## Bug Bounty (Optional)
+
+We currently do not offer financial rewards for security reports, but we greatly appreciate your help in keeping our site secure.
+
+Thank you for helping us keep Tours & Travels safe!

@@ -1,0 +1,39 @@
+# Tours & Travels - robots.txt
+# This file tells search engines which pages to crawl and index
+
+# Allow all robots
+User-agent: *
+Allow: /
+
+# Disallow sensitive directories and files
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /.env
+Disallow: /.env.local
+Disallow: /package.json
+Disallow: /package-lock.json
+
+# Allow crawling of static assets
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /data/
+
+# Specify sitemap location
+Sitemap: https://your-domain.com/sitemap.xml
+
+# Crawl delay (optional - set to prevent server overload)
+# Crawl-delay: 1
+
+# Request rate (optional)
+# Request-rate: 1/10
+
+# Specific rules for different bots (optional)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

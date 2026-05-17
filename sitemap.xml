@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Home Page -->
+    <url>
+        <loc>https://your-domain.com/index.html</loc>
+        <lastmod>2026-05-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Main Pages -->
+    <url>
+        <loc>https://your-domain.com/about.html</loc>
+        <lastmod>2026-05-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://your-domain.com/tours.html</loc>
+        <lastmod>2026-05-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://your-domain.com/booking.html</loc>
+        <lastmod>2026-05-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://your-domain.com/contact.html</loc>
+        <lastmod>2026-05-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Tour Details Pages -->
+    <!-- Note: Add individual tour detail pages as needed -->
+    <!-- Example:
+    <url>
+        <loc>https://your-domain.com/tour-details.html?id=1</loc>
+        <lastmod>2026-05-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    -->
+</urlset>

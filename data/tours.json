@@ -1,0 +1,281 @@
+{
+    "tours": [
+        {
+            "id": 1,
+            "name": "Paris City Tour",
+            "location": "France",
+            "duration": "5 days",
+            "price": 1200,
+            "image": "https://picsum.photos/500/400?random=1",
+            "rating": 4.8,
+            "reviews": 342,
+            "description": "Experience the magic of Paris with our comprehensive city tour. Visit iconic landmarks including the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and more. Enjoy authentic French cuisine and explore charming neighborhoods.",
+            "itinerary": [
+                "Day 1: Arrival in Paris. Hotel check-in and guided city orientation. Evening Seine River cruise.",
+                "Day 2: Eiffel Tower and Trocadéro viewing. Lunch at a local bistro. Visit Arc de Triomphe and Champs-Élysées.",
+                "Day 3: Louvre Museum tour. Explore Latin Quarter. Evening stroll through Montmartre.",
+                "Day 4: Versailles Palace day trip. Explore gardens and royal chambers.",
+                "Day 5: Free time for shopping and last-minute sightseeing. Departure."
+            ],
+            "included": [
+                "4-night hotel accommodation",
+                "Daily breakfast and 2 dinners",
+                "Professional tour guide",
+                "All entrance fees",
+                "Seine River cruise",
+                "Airport transfers"
+            ],
+            "maxGroupSize": 35
+        },
+        {
+            "id": 2,
+            "name": "Tokyo Adventure",
+            "location": "Japan",
+            "duration": "7 days",
+            "price": 1850,
+            "image": "https://picsum.photos/500/400?random=2",
+            "rating": 4.9,
+            "reviews": 287,
+            "description": "Immerse yourself in the vibrant culture of Tokyo. From ancient temples to cutting-edge technology, experience the perfect blend of traditional and modern Japan.",
+            "itinerary": [
+                "Day 1: Arrive in Tokyo. Traditional tea ceremony. Visit Senso-ji Temple.",
+                "Day 2: Shibuya Crossing and shopping. Meiji Shrine. Harajuku district exploration.",
+                "Day 3: Imperial Palace East Gardens. Ginza luxury shopping district.",
+                "Day 4: Day trip to Mount Fuji and Lake Hakone.",
+                "Day 5: Tsukiji Outer Market food tour. Robot Restaurant show.",
+                "Day 6: Asakusa cultural district. Skytree Tower visit.",
+                "Day 7: Free time and departure."
+            ],
+            "included": [
+                "6-night hotel accommodation",
+                "Daily breakfast",
+                "JR Pass for trains",
+                "Professional English-speaking guide",
+                "Cultural experiences",
+                "Welcome dinner"
+            ],
+            "maxGroupSize": 30
+        },
+        {
+            "id": 3,
+            "name": "Bali Beach Escape",
+            "location": "Indonesia",
+            "duration": "6 days",
+            "price": 950,
+            "image": "https://picsum.photos/500/400?random=3",
+            "rating": 4.7,
+            "reviews": 523,
+            "description": "Relax on pristine beaches and explore Bali's rich cultural heritage. Perfect for beach lovers and adventure seekers alike.",
+            "itinerary": [
+                "Day 1: Arrive in Denpasar. Transfer to beach resort. Welcome dinner on the beach.",
+                "Day 2: Beach day with water sports activities. Traditional Balinese massage.",
+                "Day 3: Ubud cultural tour. Rice terraces and traditional villages.",
+                "Day 4: Snorkeling at Coral Triangle. Underwater photography.",
+                "Day 5: Temple visits and hiking. Sunset at Mount Batur.",
+                "Day 6: Last-minute shopping and departure."
+            ],
+            "included": [
+                "5-night beachfront hotel",
+                "All meals",
+                "Water sports equipment",
+                "Professional guide",
+                "Temple entrance fees",
+                "Beach activities"
+            ],
+            "maxGroupSize": 40
+        },
+        {
+            "id": 4,
+            "name": "New York Metropolis",
+            "location": "USA",
+            "duration": "4 days",
+            "price": 1100,
+            "image": "https://picsum.photos/500/400?random=4",
+            "rating": 4.6,
+            "reviews": 418,
+            "description": "Explore the city that never sleeps. Experience Broadway, world-class museums, iconic landmarks, and incredible food.",
+            "itinerary": [
+                "Day 1: Arrive in NYC. Times Square and Broadway theater show. Welcome dinner.",
+                "Day 2: Statue of Liberty and Ellis Island tour. 9/11 Memorial.",
+                "Day 3: Central Park walk. Metropolitan Museum of Art. SoHo shopping district.",
+                "Day 4: Empire State Building. Fifth Avenue. Departure."
+            ],
+            "included": [
+                "3-night hotel in Manhattan",
+                "Daily breakfast",
+                "Broadway show tickets",
+                "Statue of Liberty ferry",
+                "Museum entrance fees",
+                "Professional guide"
+            ],
+            "maxGroupSize": 25
+        },
+        {
+            "id": 5,
+            "name": "Swiss Alps Explorer",
+            "location": "Switzerland",
+            "duration": "8 days",
+            "price": 2100,
+            "image": "https://picsum.photos/500/400?random=5",
+            "rating": 4.9,
+            "reviews": 196,
+            "description": "Experience the breathtaking beauty of the Swiss Alps. Perfect for nature lovers and hiking enthusiasts.",
+            "itinerary": [
+                "Day 1: Arrive in Zurich. Transfer to Interlaken.",
+                "Day 2: Jungfrau region high-altitude train. Alpine meadows hiking.",
+                "Day 3: Lauterbrunnen Valley exploration. Waterfall hikes.",
+                "Day 4: Zermatt and Matterhorn views. Mountain photography.",
+                "Day 5: Gornergrat mountain railway. Riffelsee lake hiking.",
+                "Day 6: Lucerne city tour and lake cruise.",
+                "Day 7: Chocolate factory visit. Swiss culture experience.",
+                "Day 8: Departure."
+            ],
+            "included": [
+                "7-night mountain lodge accommodation",
+                "Daily breakfast and dinners",
+                "Mountain railway passes",
+                "Professional hiking guide",
+                "All cable car rides",
+                "Welcome reception"
+            ],
+            "maxGroupSize": 20
+        },
+        {
+            "id": 6,
+            "name": "Dubai Luxury Experience",
+            "location": "UAE",
+            "duration": "5 days",
+            "price": 1650,
+            "image": "https://picsum.photos/500/400?random=6",
+            "rating": 4.5,
+            "reviews": 612,
+            "description": "Experience the luxury and glamour of Dubai. Shop, relax, and explore one of the world's most modern cities.",
+            "itinerary": [
+                "Day 1: Arrive in Dubai. Burj Khalifa visit. Downtown Dubai exploration.",
+                "Day 2: Dubai Mall and luxury shopping. Fountain show.",
+                "Day 3: Desert safari with BBQ dinner. Camel ride.",
+                "Day 4: Palm Jumeirah beach day. Water sports activities.",
+                "Day 5: Gold Souk visit. Departure."
+            ],
+            "included": [
+                "4-night 5-star hotel",
+                "Daily breakfast",
+                "Burj Khalifa tickets",
+                "Desert safari",
+                "Professional guide",
+                "All transfers"
+            ],
+            "maxGroupSize": 30
+        },
+        {
+            "id": 7,
+            "name": "Barcelona Mediterranean",
+            "location": "Spain",
+            "duration": "4 days",
+            "price": 890,
+            "image": "https://picsum.photos/500/400?random=7",
+            "rating": 4.7,
+            "reviews": 478,
+            "description": "Discover the architectural marvels and vibrant culture of Barcelona. From Gaudí's masterpieces to Mediterranean beaches.",
+            "itinerary": [
+                "Day 1: Arrive in Barcelona. Sagrada Familia visit. Gothic Quarter walk.",
+                "Day 2: Park Güell exploration. Montjuïc mountain tour.",
+                "Day 3: Beach day and seafood dinner. Las Ramblas stroll.",
+                "Day 4: Camp Nou stadium tour. Departure."
+            ],
+            "included": [
+                "3-night hotel accommodation",
+                "Daily breakfast",
+                "All monument entrance fees",
+                "Professional guide",
+                "Beach activities",
+                "Welcome tapas dinner"
+            ],
+            "maxGroupSize": 35
+        },
+        {
+            "id": 8,
+            "name": "London Heritage Tour",
+            "location": "United Kingdom",
+            "duration": "5 days",
+            "price": 1050,
+            "image": "https://picsum.photos/500/400?random=8",
+            "rating": 4.8,
+            "reviews": 389,
+            "description": "Explore Britain's capital with its rich history, royal palaces, museums, and iconic landmarks.",
+            "itinerary": [
+                "Day 1: Arrive in London. Tower of London tour. Welcome dinner.",
+                "Day 2: Buckingham Palace and Westminster Abbey.",
+                "Day 3: British Museum and gallery visits.",
+                "Day 4: Day trip to Stonehenge and Windsor Castle.",
+                "Day 5: Thames River cruise. Departure."
+            ],
+            "included": [
+                "4-night hotel accommodation",
+                "Daily breakfast",
+                "All monument entrance fees",
+                "Professional guide",
+                "River Thames cruise",
+                "Day trip transportation"
+            ],
+            "maxGroupSize": 30
+        },
+        {
+            "id": 9,
+            "name": "Greece Island Hopping",
+            "location": "Greece",
+            "duration": "7 days",
+            "price": 1450,
+            "image": "https://picsum.photos/500/400?random=9",
+            "rating": 4.9,
+            "reviews": 534,
+            "description": "Island-hop through the stunning Greek islands. Experience pristine beaches, ancient ruins, and authentic Greek hospitality.",
+            "itinerary": [
+                "Day 1: Arrive in Athens. Acropolis tour. Old city exploration.",
+                "Day 2: Ferry to Mykonos. Beach relaxation.",
+                "Day 3: Delos ruins day trip. Sunset sailing.",
+                "Day 4: Ferry to Santorini. Caldera views.",
+                "Day 5: Akrotiri archaeological site. Wine tasting.",
+                "Day 6: Paros island visit. Beach time.",
+                "Day 7: Return to Athens. Departure."
+            ],
+            "included": [
+                "6-night accommodation",
+                "Daily breakfast",
+                "Ferry tickets between islands",
+                "Professional guide",
+                "Archaeological site entries",
+                "Wine tasting experience"
+            ],
+            "maxGroupSize": 28
+        },
+        {
+            "id": 10,
+            "name": "Thailand Cultural Journey",
+            "location": "Thailand",
+            "duration": "6 days",
+            "price": 850,
+            "image": "https://picsum.photos/500/400?random=10",
+            "rating": 4.8,
+            "reviews": 645,
+            "description": "Immerse yourself in Thai culture. From Bangkok's vibrant street life to ancient temples and tropical islands.",
+            "itinerary": [
+                "Day 1: Arrive in Bangkok. Grand Palace tour. Temple visits.",
+                "Day 2: Floating markets. Traditional cooking class.",
+                "Day 3: Day trip to Ayutthaya ancient capital.",
+                "Day 4: Train to Chiang Mai. Temple visits.",
+                "Day 5: Elephant sanctuary and jungle trekking.",
+                "Day 6: Return to Bangkok. Departure."
+            ],
+            "included": [
+                "5-night hotel accommodation",
+                "All meals",
+                "Professional guide",
+                "All entrance fees",
+                "Cooking class",
+                "Elephant sanctuary visit"
+            ],
+            "maxGroupSize": 32
+        }
+    ]
+}

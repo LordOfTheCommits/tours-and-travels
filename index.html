@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours & Travels - Explore the World</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-globe text-primary me-2"></i>Tours & Travels
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content text-center text-white">
+            <h1 class="display-4 fw-bold mb-4">Explore the World with Us</h1>
+            <p class="lead mb-5">Discover unforgettable journeys and create lasting memories</p>
+            <a href="tours.html" class="btn btn-primary btn-lg px-5">Browse Tours</a>
+        </div>
+    </section>
+
+    <!-- Featured Tours Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold mb-2">Featured Tours</h2>
+                <p class="text-muted">Handpicked destinations for unforgettable experiences</p>
+            </div>
+            <div class="row g-4" id="featuredToursContainer">
+                <!-- Tours will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold mb-2">Why Choose Us</h2>
+                <p class="text-muted">Experience travel like never before</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3 text-center">
+                    <i class="fas fa-check-circle fa-3x text-primary mb-3"></i>
+                    <h5 class="fw-bold">Verified Tours</h5>
+                    <p class="text-muted">All tours are verified and tested by experts</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <i class="fas fa-headset fa-3x text-primary mb-3"></i>
+                    <h5 class="fw-bold">24/7 Support</h5>
+                    <p class="text-muted">Round-the-clock customer service</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                    <h5 class="fw-bold">Best Prices</h5>
+                    <p class="text-muted">Guaranteed lowest prices in the market</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <i class="fas fa-smile fa-3x text-primary mb-3"></i>
+                    <h5 class="fw-bold">100% Satisfaction</h5>
+                    <p class="text-muted">Money-back guarantee if unsatisfied</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold mb-2">What Our Travelers Say</h2>
+                <p class="text-muted">Real stories from real travelers</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="stars mb-2">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="card-text">"Amazing experience! The tour was perfectly organized and the guides
+                                were fantastic. Highly recommended!"</p>
+                            <p class="fw-bold mb-0">Sarah Johnson</p>
+                            <small class="text-muted">Paris City Tour</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="stars mb-2">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="card-text">"Best vacation ever! Great value for money and wonderful memories.
+                                Can't wait for the next trip!"</p>
+                            <p class="fw-bold mb-0">Michael Chen</p>
+                            <small class="text-muted">Tokyo Adventure</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="stars mb-2">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="card-text">"Exceptional service from booking to the end of the trip. Every detail
+                                was taken care of perfectly."</p>
+                            <p class="fw-bold mb-0">Emma Williams</p>
+                            <small class="text-muted">Bali Beach Escape</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <h2 class="fw-bold mb-3">Ready to Start Your Adventure?</h2>
+            <p class="lead mb-4">Browse our exclusive collection of tours and book your dream vacation today</p>
+            <a href="tours.html" class="btn btn-light btn-lg px-5">Explore All Tours</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Tours & Travels</h5>
+                    <p class="text-muted">Your trusted partner in exploring the world. We offer curated travel
+                        experiences that create lasting memories.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li><a href="about.html" class="text-muted text-decoration-none">About</a></li>
+                        <li><a href="tours.html" class="text-muted text-decoration-none">Tours</a></li>
+                        <li><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Contact Info</h5>
+                    <p class="text-muted mb-2"><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</p>
+                    <p class="text-muted mb-2"><i class="fas fa-envelope me-2"></i>info@toursandtravels.com</p>
+                    <p class="text-muted"><i class="fas fa-map-marker-alt me-2"></i>123 Travel Street, Adventure City
+                    </p>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <div class="text-center text-muted">
+                <p>&copy; 2026 Tours & Travels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

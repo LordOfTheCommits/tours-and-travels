@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Tours & Travels</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-globe text-primary me-2"></i>Tours & Travels
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header bg-light py-5">
+        <div class="container text-center">
+            <h1 class="display-5 fw-bold mb-2">Contact Us</h1>
+            <p class="text-muted">We'd love to hear from you. Get in touch with us today!</p>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-phone fa-2x text-primary mb-3"></i>
+                            <h5 class="fw-bold mb-2">Phone</h5>
+                            <p class="text-muted">+1 (555) 123-4567</p>
+                            <p class="text-muted small">Available Mon-Fri, 9AM-6PM EST</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
+                            <h5 class="fw-bold mb-2">Email</h5>
+                            <p class="text-muted">info@toursandtravels.com</p>
+                            <p class="text-muted small">We'll respond within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-map-marker-alt fa-2x text-primary mb-3"></i>
+                            <h5 class="fw-bold mb-2">Address</h5>
+                            <p class="text-muted">123 Travel Street<br>Adventure City, AC 12345</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Map -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Contact Form -->
+                <div class="col-lg-6">
+                    <h3 class="fw-bold mb-4">Send us a Message</h3>
+                    <form id="contactForm" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="contactName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="contactName" required>
+                            <div class="invalid-feedback">Name is required.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="contactEmail" required>
+                            <div class="invalid-feedback">Valid email is required.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactPhone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="contactPhone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactSubject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="contactSubject" required>
+                            <div class="invalid-feedback">Subject is required.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactMessage" class="form-label">Message</label>
+                            <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
+                            <div class="invalid-feedback">Message is required.</div>
+                        </div>
+                        <button class="btn btn-primary w-100" type="submit">Send Message</button>
+                    </form>
+                    <div id="contactSuccess" class="alert alert-success mt-3" style="display: none;">
+                        Thank you for your message! We'll get back to you soon.
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="col-lg-6">
+                    <h3 class="fw-bold mb-4">Find Us</h3>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1234567890!2d-74.0060!3d40.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjCiTiA3NMK0MDAnMjEuNiJX!5e0!3m2!1sen!2sus!4v1234567890"
+                        width="100%" height="400" style="border:0; border-radius: 8px;" allowfullscreen=""
+                        loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="py-5">
+        <div class="container text-center">
+            <h3 class="fw-bold mb-4">Connect With Us</h3>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#" class="btn btn-outline-primary btn-lg rounded-circle" style="width: 50px; height: 50px;">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="btn btn-outline-primary btn-lg rounded-circle" style="width: 50px; height: 50px;">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="btn btn-outline-primary btn-lg rounded-circle" style="width: 50px; height: 50px;">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="btn btn-outline-primary btn-lg rounded-circle" style="width: 50px; height: 50px;">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Tours & Travels</h5>
+                    <p class="text-muted">Your trusted partner in exploring the world. We offer curated travel
+                        experiences that create lasting memories.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li><a href="about.html" class="text-muted text-decoration-none">About</a></li>
+                        <li><a href="tours.html" class="text-muted text-decoration-none">Tours</a></li>
+                        <li><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Contact Info</h5>
+                    <p class="text-muted mb-2"><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</p>
+                    <p class="text-muted mb-2"><i class="fas fa-envelope me-2"></i>info@toursandtravels.com</p>
+                    <p class="text-muted"><i class="fas fa-map-marker-alt me-2"></i>123 Travel Street, Adventure City
+                    </p>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <div class="text-center text-muted">
+                <p>&copy; 2026 Tours & Travels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            if (!this.checkValidity()) {
+                e.stopPropagation();
+                this.classList.add('was-validated');
+                return;
+            }
+
+            // Show success message
+            document.getElementById('contactSuccess').style.display = 'block';
+            this.reset();
+            this.classList.remove('was-validated');
+
+            // In a real application, you would send this data to a server
+            console.log('Form submitted:', {
+                name: document.getElementById('contactName').value,
+                email: document.getElementById('contactEmail').value,
+                phone: document.getElementById('contactPhone').value,
+                subject: document.getElementById('contactSubject').value,
+                message: document.getElementById('contactMessage').value
+            });
+        });
+    </script>
+</body>
+
+</html>

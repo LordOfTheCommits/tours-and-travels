@@ -1,0 +1,152 @@
+# Tours & Travels - Apache Server Configuration
+# For use on shared hosting or Apache servers
+
+# ============================================
+# Enable Rewrite Module
+# ============================================
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    
+    # Redirect HTTP to HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    
+    # Remove www prefix
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    RewriteRule ^(.*)$ https://%1%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# ============================================
+# Enable GZIP Compression
+# ============================================
+<IfModule mod_deflate.c>
+    # Compress HTML, CSS, JavaScript, Text, XML and fonts
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/x-font-ttf
+    AddOutputFilterByType DEFLATE application/x-font-otf
+    AddOutputFilterByType DEFLATE application/x-font-opentype
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/opentype
+    
+    # Remove browser bugs
+    BrowserMatch ^Mozilla/4 ^$
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    Header append Vary User-Agent
+</IfModule>
+
+# ============================================
+# Browser Caching / Expire Headers
+# ============================================
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 2 days"
+    
+    # Cache HTML files for 1 day
+    ExpiresByType text/html "access plus 1 day"
+    
+    # Cache CSS files for 1 month
+    ExpiresByType text/css "access plus 1 month"
+    
+    # Cache JavaScript files for 1 month
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    
+    # Cache images for 1 year
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # Cache fonts for 1 year
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType application/x-font-ttf "access plus 1 year"
+    ExpiresByType application/x-font-otf "access plus 1 year"
+</IfModule>
+
+# ============================================
+# ETag Configuration
+# ============================================
+<IfModule mod_headers.c>
+    # Remove ETag header
+    Header unset ETag
+    FileETag None
+</IfModule>
+
+# ============================================
+# Security Headers
+# ============================================
+<IfModule mod_headers.c>
+    # Prevent clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+    
+    # Prevent MIME type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # Enable XSS protection in older browsers
+    Header always set X-XSS-Protection "1; mode=block"
+    
+    # Referrer policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Strict Transport Security (uncomment after HTTPS is set up)
+    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# ============================================
+# Prevent Access to Sensitive Files
+# ============================================
+<FilesMatch "\.env|\.git|\.gitignore|package\.json|webpack\.config">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# ============================================
+# Block Access to Hidden Files and Directories
+# ============================================
+<FilesMatch "^\.|^#.*#|~$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# ============================================
+# Allow Access to Static Files
+# ============================================
+<FilesMatch "\.(js|css|jpg|jpeg|png|gif|ico|svg|woff|woff2|ttf|otf|eot)$">
+    Header set Cache-Control "public, max-age=31536000"
+</FilesMatch>
+
+# ============================================
+# Index Files
+# ============================================
+DirectoryIndex index.html index.htm default.html
+
+# ============================================
+# Prevent Directory Listing
+# ============================================
+Options -Indexes
+
+# ============================================
+# Handle 404 Errors
+# ============================================
+ErrorDocument 404 /404.html
+
+# ============================================
+# Handle 500 Errors
+# ============================================
+ErrorDocument 500 /500.html
