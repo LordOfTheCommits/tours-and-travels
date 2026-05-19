@@ -58,7 +58,7 @@ function displayFeaturedTours() {
                         <span class="ms-2 small fw-bold">${tour.rating} (${tour.reviews})</span>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
-                        <span class="fw-bold text-primary">$${tour.price.toLocaleString()}</span>
+                        <span class="fw-bold text-primary">₹${tour.price.toLocaleString('en-IN')}</span>
                         <span class="badge bg-primary">Featured</span>
                     </div>
                     <a href="tour-details.html?id=${tour.id}" class="btn btn-outline-primary btn-sm w-100 mt-3">View Details</a>
@@ -171,6 +171,61 @@ document.addEventListener('DOMContentLoaded', () => {
     // Popovers
     const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
     popoverTriggerList.map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+
+    const copyButton = document.getElementById('copyUpiBtn');
+    const copyModalButton = document.getElementById('copyUpiModalBtn');
+    const confirmPaymentBtn = document.getElementById('confirmPaymentBtn');
+    const paymentView = document.getElementById('paymentStepView');
+    const bookingView = document.getElementById('bookingStatusView');
+    const bookingDate = document.getElementById('bookingDate');
+
+    function copyUpiId(button) {
+        const upiId = '9903773940';
+        if (!navigator.clipboard) {
+            alert('Clipboard access is not supported. Please copy the UPI ID manually: ' + upiId);
+            return;
+        }
+        navigator.clipboard.writeText(upiId).then(() => {
+            button.textContent = 'Copied!';
+            setTimeout(() => {
+                button.textContent = button.id === 'copyUpiBtn' ? 'Copy UPI ID' : 'Copy UPI ID';
+            }, 1800);
+        }).catch(() => {
+            alert('Unable to copy UPI ID. Please copy it manually: ' + upiId);
+        });
+    }
+
+    if (copyButton) {
+        copyButton.addEventListener('click', () => copyUpiId(copyButton));
+    }
+
+    if (copyModalButton) {
+        copyModalButton.addEventListener('click', () => copyUpiId(copyModalButton));
+    }
+
+    const paymentModalEl = document.getElementById('paymentModal');
+    if (paymentModalEl && paymentView && bookingView && confirmPaymentBtn) {
+        paymentModalEl.addEventListener('show.bs.modal', () => {
+            paymentView.classList.remove('d-none');
+            bookingView.classList.add('d-none');
+            confirmPaymentBtn.textContent = 'I Paid ₹299';
+            confirmPaymentBtn.disabled = false;
+        });
+    }
+
+    if (confirmPaymentBtn && paymentView && bookingView && bookingDate) {
+        confirmPaymentBtn.addEventListener('click', () => {
+            paymentView.classList.add('d-none');
+            bookingView.classList.remove('d-none');
+            bookingDate.textContent = new Date().toLocaleDateString('en-IN', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+            confirmPaymentBtn.textContent = 'Payment Confirmed';
+            confirmPaymentBtn.disabled = true;
+        });
+    }
 });
 
 /**
@@ -297,6 +352,27 @@ window.addEventListener('online', () => {
 
 window.addEventListener('offline', () => {
     showToast('You are offline. Some features may not work.', 'warning');
+});
+
+/**
+ * Copy UPI ID to clipboard
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    const copyButton = document.getElementById('copyUpiBtn');
+    if (copyButton) {
+        copyButton.addEventListener('click', async () => {
+            const upiId = '9903773940';
+            try {
+                await navigator.clipboard.writeText(upiId);
+                copyButton.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyButton.textContent = 'Copy UPI ID';
+                }, 1800);
+            } catch (error) {
+                alert('Unable to copy UPI ID. Please copy it manually: ' + upiId);
+            }
+        });
+    }
 });
 
 /**

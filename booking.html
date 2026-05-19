@@ -172,6 +172,113 @@
         </div>
     </section>
 
+    <!-- Booking Payment Modal -->
+    <div class="modal fade" id="bookingPaymentModal" tabindex="-1" aria-labelledby="bookingPaymentModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content rounded-4 border-0 overflow-hidden">
+                <div class="modal-header bg-dark text-white border-0 px-5 py-4">
+                    <div>
+                        <h5 class="modal-title fw-bold" id="bookingPaymentModalLabel">Secure UPI Payment</h5>
+                        <p class="mb-0 text-white-50">Pay ₹1 to reserve your booking and receive your booking status
+                            instantly.</p>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-5 py-4">
+                    <div id="bookingPaymentStep">
+                        <div class="row gy-4 align-items-center">
+                            <div class="col-lg-6">
+                                <div class="p-4 rounded-4 border bg-white shadow-sm">
+                                    <div class="text-center mb-4">
+                                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=280x280&data=upi://pay?pa=9903773940@upi&pn=Tours+%26+Travels&tn=Booking&cu=INR"
+                                            alt="UPI QR Code" class="img-fluid rounded-4 mx-auto d-block"
+                                            style="max-width: 260px;">
+                                    </div>
+                                    <p class="fw-semibold mb-1 text-dark">UPI ID</p>
+                                    <p class="h5 fw-bold mb-3 text-dark">9903773940</p>
+                                    <button class="btn btn-outline-secondary mb-3" id="copyUpiModalBtn">Copy UPI
+                                        ID</button>
+                                    <p class="text-muted mb-0">Open your UPI app, scan the QR code, and pay ₹1 to
+                                        confirm your booking.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="border rounded-4 p-4 h-100" style="background: rgba(14, 66, 109, 0.06);">
+                                    <h5 class="fw-bold mb-3">Booking Details</h5>
+                                    <ul class="list-unstyled text-muted mb-4">
+                                        <li class="mb-2"><strong>Tour:</strong> <span
+                                                id="bookingModalTourNamePayment"></span></li>
+                                        <li class="mb-2"><strong>Destination:</strong> <span
+                                                id="bookingModalTourInfoPayment"></span></li>
+                                        <li class="mb-2"><strong>Travelers:</strong> <span
+                                                id="bookingModalPassengersPayment"></span></li>
+                                        <li class="mb-2"><strong>Total:</strong> <span
+                                                id="bookingModalAmountPayment"></span></li>
+                                    </ul>
+                                    <div class="alert alert-info mb-0 rounded-4">
+                                        After payment, click "I Paid ₹1" to view your booking status and bill in this
+                                        window.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bookingReceiptStep" class="d-none">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-check-circle fa-3x text-success"></i>
+                            <h5 class="fw-bold mt-3">Booking Confirmed</h5>
+                            <p class="text-muted">Your payment has been received. Review your booking details below.</p>
+                        </div>
+                        <div class="card border-0 shadow-sm rounded-4">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <div>
+                                        <p class="mb-1 text-muted">Booking ID</p>
+                                        <h5 class="fw-semibold" id="bookingModalOrderId"></h5>
+                                    </div>
+                                    <div class="text-end">
+                                        <p class="mb-1 text-muted">Date</p>
+                                        <h5 class="fw-semibold" id="bookingModalDate"></h5>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6 mb-3 mb-md-0">
+                                        <p class="mb-1 text-muted">Tour</p>
+                                        <p class="fw-semibold" id="bookingModalTourNameReceipt"></p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="mb-1 text-muted">Travelers</p>
+                                        <p class="fw-semibold" id="bookingModalPassengersReceipt"></p>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6 mb-3 mb-md-0">
+                                        <p class="mb-1 text-muted">Destination</p>
+                                        <p class="fw-semibold" id="bookingModalTourInfoReceipt"></p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="mb-1 text-muted">Amount Paid</p>
+                                        <p class="fw-semibold" id="bookingModalTotal"></p>
+                                    </div>
+                                </div>
+                                <div class="border-top pt-3">
+                                    <p class="mb-1 text-muted">Special Requests</p>
+                                    <p class="fw-semibold" id="bookingModalSpecialRequests"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0 px-5 pb-4">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="confirmPaymentBtn">I Paid ₹1</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-dark text-white py-5">
         <div class="container">

@@ -13,32 +13,62 @@
 
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
-                <i class="fas fa-globe text-primary me-2"></i>Tours & Travels
+                <i class="fas fa-globe-americas text-primary me-2"></i>Tours & Travels
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
+                <div class="nav-actions d-none d-lg-flex align-items-center gap-3 ms-4">
+                    <span class="status-pill">TRAVEL GRID ONLINE</span>
+                    <a class="btn btn-primary btn-sm px-4" href="tours.html">Plan Trip</a>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section position-relative overflow-hidden">
         <div class="hero-overlay"></div>
-        <div class="container hero-content text-center text-white">
-            <h1 class="display-4 fw-bold mb-4">Explore the World with Us</h1>
-            <p class="lead mb-5">Discover unforgettable journeys and create lasting memories</p>
-            <a href="tours.html" class="btn btn-primary btn-lg px-5">Browse Tours</a>
+        <div class="container hero-content">
+            <div class="row align-items-center gx-5">
+                <div class="col-lg-6">
+                    <span class="eyebrow-badge">INDIA TRAVEL GRID ACTIVE</span>
+                    <h1 class="display-4 fw-bold hero-title mb-4">Precision journeys for modern explorers.</h1>
+                    <p class="lead hero-copy mb-4">Discover curated travel experiences across India's iconic coasts,
+                        heritage cities, and mountain escapes with seamless booking support.</p>
+                    <div class="hero-actions d-flex flex-wrap gap-3">
+                        <a href="tours.html" class="btn btn-primary btn-lg">Browse Tours</a>
+                        <a href="#paymentSection" class="btn btn-outline-primary btn-lg">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-panel rounded-4 shadow-lg overflow-hidden">
+                        <div class="hero-panel-image">
+                            <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1200&q=80"
+                                alt="Beautiful Indian travel destination" class="img-fluid">
+                        </div>
+                        <div class="hero-panel-body p-4 bg-white">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="eyebrow-badge soft mb-0">REAL-TIME DATA</span>
+                                <span class="badge bg-primary text-white px-3 py-2">Live</span>
+                            </div>
+                            <h3 class="fw-bold mb-2">Active bookings available in coastal and heritage routes.</h3>
+                            <p class="text-muted mb-0">Instant availability, expert guides, and dynamic itinerary
+                                updates for every trip.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -151,13 +181,154 @@
     </section>
 
     <!-- Call to Action Section -->
-    <section class="py-5 bg-primary text-white text-center">
+    <section class="py-5 cta-section text-center">
         <div class="container">
             <h2 class="fw-bold mb-3">Ready to Start Your Adventure?</h2>
             <p class="lead mb-4">Browse our exclusive collection of tours and book your dream vacation today</p>
-            <a href="tours.html" class="btn btn-light btn-lg px-5">Explore All Tours</a>
+            <a href="tours.html" class="btn btn-primary btn-lg px-5">Explore All Tours</a>
         </div>
     </section>
+
+    <!-- Payment Section -->
+    <section id="paymentSection" class="py-5 payment-section bg-light">
+        <div class="container">
+            <div class="row align-items-center gx-4">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <span class="badge bg-white text-primary mb-3">Secure Payment</span>
+                    <h2 class="fw-bold mb-3">Pay Instantly with UPI</h2>
+                    <p class="lead mb-4">Use any UPI app to complete your booking payment quickly and securely. Tap the
+                        button below or scan the QR code to pay in Indian rupees.</p>
+                    <div class="payment-info rounded-4 mb-4">
+                        <p class="mb-1 text-muted">UPI ID</p>
+                        <h3 class="fw-bold text-dark">9903773940</h3>
+                        <p class="text-muted mb-0">Send payment to this UPI ID and confirm your booking instantly.</p>
+                    </div>
+                    <div class="d-flex flex-wrap gap-3">
+                        <button type="button" class="btn btn-primary btn-lg" id="proceedPaymentBtn"
+                            data-bs-toggle="modal" data-bs-target="#paymentModal">Proceed to Payment</button>
+                        <button class="btn btn-outline-primary btn-lg" id="copyUpiBtn">Copy UPI ID</button>
+                    </div>
+                    <p class="mt-3 text-muted small">If your browser does not support direct UPI pay links, copy the ID
+                        and paste it into your UPI app.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="payment-card p-4 rounded-4 shadow-lg bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div>
+                                <p class="mb-1 text-muted">Pay using UPI</p>
+                                <h5 class="fw-bold mb-0">9903773940</h5>
+                            </div>
+                            <i class="fas fa-qrcode fa-2x text-primary"></i>
+                        </div>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=280x280&data=upi://pay?pa=9903773940@upi&pn=Tours+%26+Travels&tn=Tour+Booking&am=299&cu=INR"
+                            alt="UPI QR Code" class="img-fluid rounded-4">
+                        <p class="mt-3 text-muted small mb-0">Scan this QR code with any UPI app or use the Pay via UPI
+                            button above.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content rounded-4 border-0 overflow-hidden">
+                <div class="modal-header bg-dark text-white border-0 px-5 py-4">
+                    <div>
+                        <h5 class="modal-title fw-bold" id="paymentModalLabel">Secure UPI Payment</h5>
+                        <p class="mb-0 text-white-50">Pay ₹299 to reserve your booking and receive your invoice
+                            instantly.
+                        </p>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-5 py-4">
+                    <div id="paymentStepView">
+                        <div class="row gy-4 align-items-center">
+                            <div class="col-lg-6">
+                                <div class="p-4 rounded-4 border bg-white shadow-sm">
+                                    <div class="text-center mb-4">
+                                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=280x280&data=upi://pay?pa=9903773940@upi&pn=Tours+%26+Travels&tn=Tour+Booking&am=299&cu=INR"
+                                            alt="UPI QR Code" class="img-fluid rounded-4 mx-auto d-block"
+                                            style="max-width: 260px;">
+                                    </div>
+                                    <p class="fw-semibold mb-1 text-dark">UPI ID</p>
+                                    <p class="h5 fw-bold mb-3 text-dark">9903773940</p>
+                                    <button class="btn btn-outline-secondary mb-3" id="copyUpiModalBtn">Copy UPI
+                                        ID</button>
+                                    <p class="text-muted mb-0">Open your UPI app, scan the QR code, and pay ₹299 to
+                                        confirm your
+                                        booking.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="border rounded-4 p-4 h-100" style="background: rgba(14, 66, 109, 0.06);">
+                                    <h5 class="fw-bold mb-3">Booking Details</h5>
+                                    <ul class="list-unstyled text-muted mb-4">
+                                        <li class="mb-2"><strong>Package:</strong> Classic Booking Confirmation</li>
+                                        <li class="mb-2"><strong>Amount:</strong> ₹299.00</li>
+                                        <li class="mb-2"><strong>Payment method:</strong> UPI</li>
+                                        <li class="mb-2"><strong>UPI ID:</strong> 9903773940</li>
+                                    </ul>
+                                    <div class="alert alert-info mb-0 rounded-4">
+                                        After payment, click "I Paid ₹299" to view your booking confirmation and bill.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bookingStatusView" class="d-none">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-check-circle fa-3x text-success"></i>
+                            <h5 class="fw-bold mt-3">Payment Received</h5>
+                            <p class="text-muted">Your booking is confirmed. Below is your invoice summary.</p>
+                        </div>
+                        <div class="card border-0 shadow-sm rounded-4">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <div>
+                                        <h5 class="card-title fw-bold mb-1">Booking Status</h5>
+                                        <p class="text-muted mb-0">Confirmed</p>
+                                    </div>
+                                    <span class="badge bg-success px-3 py-2">Paid</span>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6 mb-3 mb-md-0">
+                                        <p class="mb-1 text-muted">Order ID</p>
+                                        <p class="fw-semibold">#TAT-0101</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="mb-1 text-muted">Date</p>
+                                        <p class="fw-semibold" id="bookingDate"></p>
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-md-6 mb-3 mb-md-0">
+                                        <p class="mb-1 text-muted">Package</p>
+                                        <p class="fw-semibold">Classic Confirmation</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="mb-1 text-muted">Amount Paid</p>
+                                        <p class="fw-semibold">₹299.00</p>
+                                    </div>
+                                </div>
+                                <div class="border-top pt-3">
+                                    <p class="mb-1 text-muted">Invoice Total</p>
+                                    <h4 class="fw-bold">₹299.00</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0 px-5 pb-4">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="confirmPaymentBtn">I Paid ₹299</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-dark text-white py-5">
@@ -179,15 +350,16 @@
                 </div>
                 <div class="col-md-4">
                     <h5 class="fw-bold mb-3">Contact Info</h5>
-                    <p class="text-muted mb-2"><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</p>
-                    <p class="text-muted mb-2"><i class="fas fa-envelope me-2"></i>info@toursandtravels.com</p>
-                    <p class="text-muted"><i class="fas fa-map-marker-alt me-2"></i>123 Travel Street, Adventure City
-                    </p>
+                    <p class="text-muted mb-2"><i class="fas fa-phone me-2"></i>+91 98765 43210</p>
+                    <p class="text-muted mb-2"><i class="fas fa-envelope me-2"></i>info@toursandtravels.in</p>
+                    <p class="text-muted"><i class="fas fa-map-marker-alt me-2"></i>Mumbai, Maharashtra, India</p>
                 </div>
             </div>
             <hr class="bg-secondary">
             <div class="text-center text-muted">
                 <p>&copy; 2026 Tours & Travels. All rights reserved.</p>
+                <p class="mt-2" style="font-size: 0.95rem; color: rgba(255,255,255,0.72);">Designed with care for modern
+                    Indian travellers by <span style="color:#5db1ff; font-weight:700;">Zuhair Arshad</span>.</p>
             </div>
         </div>
     </footer>

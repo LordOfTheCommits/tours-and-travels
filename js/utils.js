@@ -44,15 +44,48 @@ function generateStars(rating) {
  * Filters tours based on multiple criteria
  */
 function filterTours(tours, filters) {
+    // Helper to determine if a tour location is in India
+    function isIndianLocation(loc) {
+        if (!loc) return false;
+        const indianKeywords = ['india', 'delhi', 'goa', 'jaipur', 'agra', 'kerala', 'ladakh', 'leh', 'darjeeling', 'rishikesh', 'manali', 'andaman', 'andaman & nicobar', 'varanasi', 'mumbai', 'kolkata', 'chennai', 'bengaluru'];
+        const lower = loc.toLowerCase();
+        return indianKeywords.some(k => lower.includes(k));
+    }
+
     return tours.filter(tour => {
-        const matchesLocation = !filters.location || tour.location.toLowerCase().includes(filters.location.toLowerCase());
+        // Location matching: support selecting 'India' to match any Indian location
+        let matchesLocation = true;
+        if (filters.location) {
+            const locFilter = filters.location.toLowerCase();
+            if (locFilter === 'india') {
+                matchesLocation = isIndianLocation(tour.location);
+            } else {
+                matchesLocation = tour.location && tour.location.toLowerCase().includes(locFilter);
+            }
+        }
+
         const matchesPrice = !filters.maxPrice || tour.price <= filters.maxPrice;
         const matchesDuration = !filters.duration || tour.duration.includes(filters.duration);
+
+        // Search matches name or location
         const matchesSearch = !filters.search ||
             tour.name.toLowerCase().includes(filters.search.toLowerCase()) ||
             tour.location.toLowerCase().includes(filters.search.toLowerCase());
 
-        return matchesLocation && matchesPrice && matchesDuration && matchesSearch;
+        // Category filtering (filters.category may be string or array)
+        let matchesCategory = true;
+        if (filters.category && filters.category.length) {
+            const cats = Array.isArray(filters.category) ? filters.category : [filters.category];
+            // tour.category may be a string
+            if (tour.category) {
+                const tcat = tour.category.toLowerCase();
+                matchesCategory = cats.some(c => tcat === c.toLowerCase());
+            } else {
+                matchesCategory = false;
+            }
+        }
+
+        return matchesLocation && matchesPrice && matchesDuration && matchesSearch && matchesCategory;
     });
 }
 

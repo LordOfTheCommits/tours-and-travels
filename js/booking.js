@@ -5,6 +5,7 @@
 const TAX_RATE = 0.10; // 10% tax
 let selectedTour = null;
 let selectedTourPrice = 0;
+let pendingBookingData = null;
 
 /**
  * Initialize booking page
@@ -28,6 +29,42 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Update summary initially
     updateBookingSummary();
+
+    const confirmPaymentBtn = document.getElementById('confirmPaymentBtn');
+    if (confirmPaymentBtn) {
+        confirmPaymentBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            completeBookingPayment();
+        });
+    }
+
+    const copyModalBtn = document.getElementById('copyUpiModalBtn');
+    if (copyModalBtn) {
+        copyModalBtn.addEventListener('click', () => {
+            const upiId = '9903773940';
+            if (!navigator.clipboard) {
+                alert('Clipboard access is not supported. Please copy the UPI ID manually: ' + upiId);
+                return;
+            }
+            navigator.clipboard.writeText(upiId).then(() => {
+                copyModalBtn.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyModalBtn.textContent = 'Copy UPI ID';
+                }, 1800);
+            }).catch(() => {
+                alert('Unable to copy UPI ID. Please copy it manually: ' + upiId);
+            });
+        });
+    }
+
+    const paymentModalEl = document.getElementById('bookingPaymentModal');
+    if (paymentModalEl) {
+        paymentModalEl.addEventListener('show.bs.modal', () => {
+            if (pendingBookingData) {
+                populateBookingPaymentModal(pendingBookingData);
+            }
+        });
+    }
 });
 
 /**
@@ -71,7 +108,7 @@ function populateTourSelect() {
     allTours.forEach(tour => {
         const option = document.createElement('option');
         option.value = tour.id;
-        option.textContent = `${tour.name} (${tour.location}) - $${tour.price.toLocaleString()}`;
+        option.textContent = `${tour.name} (${tour.location}) - ₹${tour.price.toLocaleString('en-IN')}`;
         option.dataset.price = tour.price;
         tourSelect.appendChild(option);
     });
@@ -179,7 +216,7 @@ function updateBookingSummary() {
         <p class="text-muted small mb-3">${tour.location} • ${tour.duration}</p>
         
         <div class="tour-details mb-3 pb-3 border-bottom">
-            <p class="mb-1"><small class="text-muted">Tour Price: $${tour.price.toLocaleString()}</small></p>
+            <p class="mb-1"><small class="text-muted">Tour Price: ₹${tour.price.toLocaleString('en-IN')}</small></p>
             <p class="mb-1"><small class="text-muted">Number of Travelers: ${numTravelers}</small></p>
             ${document.getElementById('tourDate').value ? `
                 <p class="mb-0"><small class="text-muted">Travel Date: ${formatDate(document.getElementById('tourDate').value)}</small></p>
@@ -260,6 +297,12 @@ function getBookingData() {
  */
 function validateBookingForm() {
     const form = document.getElementById('bookingForm');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+
+    // Trim email and phone values before validation
+    emailInput.value = emailInput.value.trim();
+    phoneInput.value = phoneInput.value.trim();
 
     // Check form validity
     if (!form.checkValidity()) {
@@ -267,7 +310,7 @@ function validateBookingForm() {
     }
 
     // Validate email
-    const email = document.getElementById('email').value;
+    const email = emailInput.value;
     if (!isValidEmail(email)) {
         showToast('Please enter a valid email address', 'danger');
         return false;
@@ -327,12 +370,78 @@ function handleBookingSubmit(e) {
     // Store booking in localStorage
     StorageManager.set('currentBooking', bookingData);
 
-    // Show confirmation
-    showBookingConfirmation(bookingData);
+    // Open payment modal with UPI QR and booking details
+    pendingBookingData = bookingData;
+    openBookingPaymentModal(bookingData);
 
     // Log booking
     console.log('Booking created:', bookingData);
 }
+
+/**
+ * Open the payment modal and populate booking details
+ */
+function openBookingPaymentModal(bookingData) {
+    pendingBookingData = bookingData;
+    populateBookingPaymentModal(bookingData);
+    const bookingModalEl = document.getElementById('bookingPaymentModal');
+    if (!bookingModalEl) return;
+    const modal = bootstrap.Modal.getOrCreateInstance(bookingModalEl);
+    modal.show();
+}
+
+/**
+ * Populate booking payment modal content
+ */
+function populateBookingPaymentModal(bookingData) {
+    document.getElementById('bookingModalTourNamePayment').textContent = bookingData.tour.name;
+    document.getElementById('bookingModalTourInfoPayment').textContent = `${bookingData.tour.location} • ${bookingData.tour.duration}`;
+    document.getElementById('bookingModalOrderId').textContent = bookingData.bookingId;
+    document.getElementById('bookingModalDate').textContent = formatDate(bookingData.bookingDate);
+    document.getElementById('bookingModalPassengersPayment').textContent = bookingData.numTravelers;
+    document.getElementById('bookingModalAmountPayment').textContent = '₹1.00';
+    document.getElementById('bookingModalTotal').textContent = '₹1.00';
+    document.getElementById('bookingModalSpecialRequests').textContent = bookingData.specialRequests || 'None';
+    document.getElementById('bookingModalTourNameReceipt').textContent = bookingData.tour.name;
+    document.getElementById('bookingModalTourInfoReceipt').textContent = `${bookingData.tour.location} • ${bookingData.tour.duration}`;
+    document.getElementById('bookingModalPassengersReceipt').textContent = bookingData.numTravelers;
+    document.getElementById('bookingModalTotal').textContent = '₹1.00';
+
+    const paymentStep = document.getElementById('bookingPaymentStep');
+    const receiptStep = document.getElementById('bookingReceiptStep');
+    if (paymentStep && receiptStep) {
+        paymentStep.classList.remove('d-none');
+        receiptStep.classList.add('d-none');
+    }
+    const confirmPaymentBtn = document.getElementById('confirmPaymentBtn');
+    if (confirmPaymentBtn) {
+        confirmPaymentBtn.textContent = 'I Paid ₹1';
+        confirmPaymentBtn.disabled = false;
+    }
+}
+
+/**
+ * Switch payment modal to receipt view after payment
+ */
+function completeBookingPayment() {
+    if (!pendingBookingData) {
+        showToast('Please complete your booking details first.', 'danger');
+        return;
+    }
+
+    const paymentStep = document.getElementById('bookingPaymentStep');
+    const receiptStep = document.getElementById('bookingReceiptStep');
+    if (paymentStep && receiptStep) {
+        paymentStep.classList.add('d-none');
+        receiptStep.classList.remove('d-none');
+    }
+    const confirmPaymentBtn = document.getElementById('confirmPaymentBtn');
+    if (confirmPaymentBtn) {
+        confirmPaymentBtn.textContent = 'Payment Confirmed';
+        confirmPaymentBtn.disabled = true;
+    }
+}
+
 
 /**
  * Show booking confirmation
@@ -348,7 +457,7 @@ function showBookingConfirmation(bookingData) {
             <p><strong>Tour:</strong> ${bookingData.tour.name}</p>
             <p><strong>Date:</strong> ${formatDate(bookingData.tourDate)}</p>
             <p><strong>Travelers:</strong> ${bookingData.numTravelers}</p>
-            <p class="mb-0"><strong>Total Amount:</strong> $${bookingData.total.toLocaleString()}</p>
+            <p class="mb-0"><strong>Total Amount:</strong> ₹${bookingData.total.toLocaleString('en-IN')}</p>
             <hr>
             <p class="mb-0">A confirmation email has been sent to <strong>${bookingData.passengers[0].email}</strong></p>
             <p class="mb-0">Please proceed to payment to complete your booking.</p>

@@ -9,20 +9,48 @@ let filteredTours = [];
 /**
  * Initialize tours page
  */
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    // Wait for tours data to be loaded
+    await waitForToursData();
+
     populateFilters();
+    updatePriceDisplay();
     displayTours();
     setupFilterListeners();
 });
 
 /**
+ * Wait for tours data to be available
+ */
+function waitForToursData() {
+    return new Promise((resolve) => {
+        const checkInterval = setInterval(() => {
+            if (typeof allTours !== 'undefined' && allTours.length > 0) {
+                clearInterval(checkInterval);
+                resolve();
+            }
+        }, 100);
+
+        // Timeout after 5 seconds
+        setTimeout(() => {
+            clearInterval(checkInterval);
+            resolve();
+        }, 5000);
+    });
+}
+
+/**
  * Populate filter dropdowns with unique values
  */
 function populateFilters() {
-    // Populate location filter
+    // Populate location filter with all unique tour locations from the data
     const locations = getUniqueLocations();
     const locationSelect = document.getElementById('locationFilter');
-    locations.forEach(location => {
+
+    // Sort locations alphabetically
+    const sortedLocations = locations.sort();
+
+    sortedLocations.forEach(location => {
         const option = document.createElement('option');
         option.value = location;
         option.textContent = location;
@@ -82,7 +110,7 @@ function setupFilterListeners() {
  */
 function updatePriceDisplay() {
     const maxPrice = document.getElementById('priceFilter').value;
-    document.getElementById('priceValue').textContent = `$0 - $${parseInt(maxPrice).toLocaleString()}`;
+    document.getElementById('priceValue').textContent = `₹0 - ₹${parseInt(maxPrice).toLocaleString()}`;
 }
 
 /**
@@ -165,7 +193,7 @@ function displayTours() {
                     </div>
                     
                     <div class="d-flex justify-content-between align-items-center">
-                        <span class="fw-bold text-primary fs-5">$${tour.price.toLocaleString()}</span>
+                        <span class="fw-bold text-primary fs-5">₹${tour.price.toLocaleString('en-IN')}</span>
                         <span class="text-muted small">per person</span>
                     </div>
                     
@@ -234,9 +262,9 @@ function goToPage(page) {
 function resetFilters() {
     document.getElementById('searchInput').value = '';
     document.getElementById('locationFilter').value = '';
-    document.getElementById('priceFilter').value = '5000';
+    document.getElementById('priceFilter').value = '50000';
     document.getElementById('durationFilter').value = '';
-    document.getElementById('priceValue').textContent = '$0 - $5000';
+    document.getElementById('priceValue').textContent = '₹0 - ₹50,000';
 
     currentPage = 1;
     displayTours();
@@ -318,3 +346,29 @@ function exportToJSON() {
 function printTours() {
     window.print();
 }
+
+/**
+ * Handle hero search button click
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    const heroSearchBtn = document.getElementById('heroSearchBtn');
+    if (heroSearchBtn) {
+        heroSearchBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.focus();
+                currentPage = 1;
+                displayTours();
+            }
+        });
+    }
+
+    // Handle reset filters from empty state
+    const resetFromEmptyBtn = document.getElementById('resetFiltersFromEmpty');
+    if (resetFromEmptyBtn) {
+        resetFromEmptyBtn.addEventListener('click', () => {
+            resetFilters();
+        });
+    }
+});

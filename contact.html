@@ -189,6 +189,9 @@
         document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
 
+            const contactEmail = document.getElementById('contactEmail');
+            contactEmail.value = contactEmail.value.trim();
+
             if (!this.checkValidity()) {
                 e.stopPropagation();
                 this.classList.add('was-validated');

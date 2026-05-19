@@ -4,21 +4,34 @@
 
 /* CSS Variables */
 :root {
-    --primary-color: #0d6efd;
-    --secondary-color: #6c757d;
-    --success-color: #198754;
-    --danger-color: #dc3545;
-    --warning-color: #ffc107;
-    --info-color: #0dcaf0;
-    --light-color: #f8f9fa;
-    --dark-color: #212529;
-    --white: #ffffff;
-    --text-dark: #2c3e50;
-    --text-muted: #7f8c8d;
-    --border-color: #e0e0e0;
-    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
-    --transition: all 0.3s ease-in-out;
+    --primary-color: #0F172A;
+    /* Dark Navy */
+    --brand-blue: #2563EB;
+    /* Secondary blue */
+    --accent-color: #F59E0B;
+    /* Amber */
+    --secondary-color: #64748B;
+    /* Text secondary */
+    --success-color: #16A34A;
+    --danger-color: #DC2626;
+    --background-start: #F8FAFC;
+    /* Background */
+    --background-end: #FFFFFF;
+    --panel-bg: rgba(255, 255, 255, 0.92);
+    --surface: #FFFFFF;
+    /* Cards */
+    --white: #FFFFFF;
+    --light-color: #F1F5F9;
+    --dark-color: #0F172A;
+    --text-dark: #111827;
+    /* Primary text */
+    --text-muted: #64748B;
+    /* Secondary text */
+    --border-color: rgba(15, 23, 42, 0.06);
+    --shadow: 0 18px 48px rgba(15, 23, 42, 0.06);
+    --shadow-lg: 0 28px 80px rgba(15, 23, 42, 0.12);
+    --glow: 0 0 24px rgba(37, 99, 235, 0.10);
+    --transition: all 0.28s cubic-bezier(.2, .9, .2, 1);
 }
 
 /* General Styles */
@@ -35,8 +48,25 @@ html {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-dark);
-    background-color: var(--white);
-    line-height: 1.6;
+    background: linear-gradient(180deg, var(--background-start), var(--background-end));
+    background-image: radial-gradient(circle at 14% 12%, rgba(84, 142, 255, 0.14), transparent 18%),
+        radial-gradient(circle at 82% 10%, rgba(173, 206, 255, 0.10), transparent 16%),
+        radial-gradient(circle at 28% 86%, rgba(255, 255, 255, 0.88), transparent 18%);
+    min-height: 100vh;
+    line-height: 1.65;
+}
+
+section {
+    background-color: transparent;
+    padding: 4.5rem 0;
+}
+
+.section-soft,
+.bg-light {
+    background: var(--surface);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.68);
+    box-shadow: var(--shadow);
 }
 
 /* Typography */
@@ -54,6 +84,15 @@ p {
     color: var(--text-muted);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #0b1f39;
+}
+
 a {
     color: var(--primary-color);
     text-decoration: none;
@@ -66,68 +105,77 @@ a:hover {
 
 /* Buttons */
 .btn {
-    font-weight: 600;
-    padding: 0.6rem 1.5rem;
-    border-radius: 6px;
+    font-weight: 700;
+    padding: 0.95rem 1.9rem;
+    border-radius: 18px;
     transition: var(--transition);
     border: none;
+    box-shadow: 0 14px 30px rgba(15, 44, 86, 0.08);
 }
 
+/* Primary button (blue) */
 .btn-primary {
-    background-color: var(--primary-color);
+    background: var(--brand-blue);
     color: var(--white);
+    box-shadow: 0 12px 36px rgba(37, 99, 235, 0.12);
 }
 
 .btn-primary:hover {
-    background-color: #0b5ed7;
+    background: #1d4ed8;
+    /* darker blue */
     transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 22px 44px rgba(29, 78, 216, 0.16);
 }
 
-.btn-outline-primary {
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+/* Secondary button: white with blue border */
+.btn-outline-brand {
+    color: var(--brand-blue);
+    background: var(--white);
+    border: 1px solid var(--brand-blue);
 }
 
-.btn-outline-primary:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
+.btn-outline-brand:hover {
+    background: rgba(37, 99, 235, 0.06);
 }
 
 .btn-secondary {
-    background-color: var(--secondary-color);
-}
-
-.btn-secondary:hover {
-    background-color: #5c636a;
+    background-color: rgba(15, 23, 42, 0.04);
+    color: var(--text-dark);
 }
 
 /* Cards */
 .card {
-    border: none;
-    border-radius: 12px;
+    border: 1px solid rgba(16, 33, 69, 0.1);
+    border-radius: 24px;
     overflow: hidden;
     transition: var(--transition);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(18px);
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
 }
 
 .card-header {
-    background: linear-gradient(135deg, var(--primary-color), #0b5ed7);
+    background: linear-gradient(135deg, #1d74ff, #5eb8ff);
     border: none;
-    font-weight: 600;
+    font-weight: 700;
+    color: var(--white);
 }
 
 /* Navigation */
 .navbar {
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid rgba(16, 33, 69, 0.08);
+    box-shadow: 0 24px 64px rgba(15, 44, 86, 0.07);
 }
 
 .navbar-brand {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: var(--text-dark) !important;
     transition: var(--transition);
 }
@@ -166,38 +214,315 @@ a:hover {
 /* Hero Section */
 .hero-section {
     position: relative;
-    height: 500px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    background-attachment: fixed;
+    min-height: 640px;
+    background: linear-gradient(135deg, rgba(235, 244, 255, 0.98) 0%, rgba(255, 255, 255, 1) 100%);
     display: flex;
     align-items: center;
-    justify-content: center;
-    color: var(--white);
     overflow: hidden;
+    padding: 4.5rem 0;
 }
 
 .hero-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    inset: 0;
+    background: radial-gradient(circle at 12% 18%, rgba(0, 255, 255, 0.12), transparent 18%),
+        radial-gradient(circle at 82% 25%, rgb(0, 202, 247), transparent 16%),
+        radial-gradient(circle at 45% 80%, rgba(255, 255, 255, 0.9), transparent 18%);
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
+    width: 100%;
+    padding: 3rem 2.2rem;
+    border-radius: 34px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 36px 110px rgba(15, 44, 86, 0.12);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(69, 16, 24, 0.08);
+}
+
+.hero-title {
+    color: #0b1f39;
+    line-height: 1.02;
+}
+
+.hero-copy {
+    max-width: 560px;
+    color: var(--text-muted);
+}
+
+.eyebrow-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1rem;
+    border-radius: 999px;
+    background: rgba(20, 86, 214, 0.08);
+    color: var(--primary-color);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.eyebrow-badge.soft {
+    background: rgba(20, 86, 214, 0.04);
+}
+
+.hero-panel {
+    border: 1px solid rgba(16, 33, 69, 0.08);
+    background: rgba(255, 255, 255, 0.96);
+}
+
+.hero-panel-image {
+    min-height: 380px;
+    overflow: hidden;
+    background-color: #f3f6ff;
+}
+
+.hero-panel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-panel-body {
+    padding: 1.75rem;
+}
+
+.hero-panel-body h3 {
+    font-size: 1.4rem;
+}
+
+.nav-actions .status-pill {
+    padding: 0.55rem 0.95rem;
+    border-radius: 999px;
+    background: rgba(20, 86, 214, 0.08);
+    color: var(--primary-color);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, rgba(226, 240, 255, 0.96), rgba(255, 255, 255, 0.96));
+    border: 1px solid rgba(29, 116, 255, 0.16);
+    border-radius: 30px;
+    box-shadow: 0 24px 65px rgba(29, 76, 152, 0.08);
+    padding: 4rem 1rem;
+    margin: 2.5rem 0;
+}
+
+.cta-section h2 {
+    color: #13325c;
+    font-weight: 800;
+}
+
+.cta-section p {
+    color: #5f728f;
+    font-weight: 500;
+    max-width: 680px;
+    margin: 0 auto 1.75rem;
+}
+
+.cta-section .btn-primary {
+    background: linear-gradient(135deg, #00fbff, #041ddb);
+    color: var(--white);
+    box-shadow: 0 18px 38px rgba(29, 76, 152, 0.18);
+    border-radius: 999px;
+    padding: 0.95rem 2.2rem;
+}
+
+.cta-section .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 22px 46px rgba(29, 76, 152, 0.24);
 }
 
 .hero-section h1 {
-    color: var(--white);
+    color: #0d1f3e;
     animation: slideInDown 0.8s ease;
+    letter-spacing: 0.02em;
+    line-height: 1.03;
+    font-size: clamp(2.8rem, 4vw, 4.4rem);
 }
 
 .hero-section p {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 1.25rem;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 620px;
+    margin: 0 auto 1.8rem;
+}
+
+.hero-actions .btn {
+    min-width: 170px;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+}
+
+.hero-highlights {
+    margin-top: 2rem;
+}
+
+.hero-highlights .highlight-card {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(31, 91, 235, 0.12);
+    min-height: 190px;
+    padding: 1.8rem;
+    transition: var(--transition);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 18px 40px rgba(15, 44, 86, 0.08);
+}
+
+.hero-highlights .highlight-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 26px 68px rgba(15, 44, 86, 0.12);
+}
+
+.hero-highlights .highlight-card h5,
+.hero-highlights .highlight-card p {
+    color: var(--text-dark);
+}
+
+.hero-highlights .highlight-card i {
+    color: var(--primary-color);
+}
+
+.payment-section {
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+    padding: 2.5rem 0;
+}
+
+.payment-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(94, 184, 255, 0.14), transparent 30%),
+        linear-gradient(90deg, rgba(29, 240, 255, 0.08) 1px, transparent 1px) 0 0 / 34px 34px;
+    pointer-events: none;
+}
+
+.payment-section .payment-info {
+    border: 1px solid rgba(16, 33, 69, 0.1);
+    background: rgba(255, 255, 255, 0.92);
+    padding: 1.75rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(15, 44, 86, 0.08);
+}
+
+.payment-section .payment-info p,
+.payment-section .payment-info h3 {
+    color: var(--text-dark);
+}
+
+.payment-section h2,
+.payment-section p {
+    color: var(--text-dark);
+}
+
+.payment-card {
+    border: 1px solid rgba(16, 33, 69, 0.1);
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 22px 60px rgba(15, 44, 86, 0.1);
+    max-width: 520px;
+    margin: 0 auto;
+    border-radius: 28px;
+    padding: 1.75rem;
+}
+
+.payment-card img {
+    width: 100%;
+    max-width: 260px;
+    border-radius: 20px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.payment-section .btn-light {
+    background-color: #ffffff;
+    color: var(--text-dark);
+    border: 1px solid rgba(29, 116, 255, 0.12);
+    box-shadow: 0 12px 28px rgba(29, 76, 152, 0.08);
+}
+
+.payment-section .btn-light:hover {
+    background-color: #f4f7ff;
+}
+
+.payment-section .btn-outline-light {
+    color: var(--primary-color);
+    border-color: rgba(29, 116, 255, 0.24);
+    background-color: rgba(29, 116, 255, 0.08);
+}
+
+.payment-section .btn-outline-light:hover {
+    background-color: rgba(29, 116, 255, 0.18);
+}
+
+.payment-section .text-white-75,
+.payment-section .text-white {
+    color: var(--text-muted) !important;
+}
+
+.modal-body img {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    display: block;
+}
+
+.btn-light {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: var(--dark-color);
+}
+
+.btn-outline-light {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.16);
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(29, 116, 255, 0.12);
+    border-radius: 28px;
+    box-shadow: 0 30px 80px rgba(29, 76, 152, 0.14);
+}
+
+.modal-header,
+.modal-footer {
+    background: transparent;
+}
+
+.modal-body {
+    color: var(--text-dark);
+}
+
+.modal-body .btn-outline-secondary {
+    color: var(--text-dark);
+}
+
+.modal-body .alert {
+    background-color: rgba(244, 247, 255, 0.94);
+    border-color: rgba(29, 116, 255, 0.12);
+}
+
+.modal-body .card {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(29, 116, 255, 0.12);
+}
+
+.modal-body .card-body {
+    color: var(--text-dark);
 }
 
 /* Page Header */
@@ -215,43 +540,92 @@ a:hover {
 
 /* Featured Tours Section */
 .tour-card {
-    border-radius: 12px;
+    border-radius: 24px;
     overflow: hidden;
     transition: var(--transition);
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.55);
     box-shadow: var(--shadow);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(18px);
 }
 
 .tour-card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-6px);
     box-shadow: var(--shadow-lg);
 }
 
 .tour-card img {
-    height: 250px;
+    height: 240px;
     object-fit: cover;
     transition: var(--transition);
 }
 
 .tour-card:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .tour-card .card-body {
-    padding: 1.5rem;
+    padding: 1.75rem;
 }
 
 .tour-card .card-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Category chips */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.04);
+    color: var(--text-dark);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.18s ease;
+}
+
+.chip.active {
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.12), rgba(245, 158, 11, 0.06));
+    border-color: rgba(37, 99, 235, 0.16);
+    box-shadow: var(--glow);
+    color: var(--brand-blue);
+}
+
+/* Image overlay gradient for premium look */
+.tour-card .position-relative::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.18) 100%);
+    pointer-events: none;
+}
+
+/* No results style */
+#noResults h4 {
+    color: var(--text-dark);
+}
+
+#noResults p {
+    color: var(--text-muted);
 }
 
 /* Badges */
 .badge {
     padding: 0.6rem 1rem;
     font-weight: 600;
-    border-radius: 20px;
+    border-radius: 999px;
     font-size: 0.85rem;
+}
+
+.badge-primary {
+    background-color: var(--primary-color);
+}
+
+.badge-secondary {
+    background-color: var(--secondary-color);
 }
 
 .badge-primary {
@@ -265,17 +639,19 @@ a:hover {
 /* Forms */
 .form-control,
 .form-select {
-    border: 2px solid var(--border-color);
-    border-radius: 8px;
-    padding: 0.75rem 1rem;
+    border: 2px solid rgba(16, 33, 69, 0.12);
+    border-radius: 18px;
+    padding: 0.9rem 1rem;
     font-size: 1rem;
+    background: rgba(255, 255, 255, 0.96);
     transition: var(--transition);
+    box-shadow: inset 0 1px 2px rgba(15, 44, 86, 0.04);
 }
 
 .form-control:focus,
 .form-select:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(31, 91, 235, 0.16);
 }
 
 .form-label {
@@ -390,6 +766,30 @@ footer hr {
     }
 }
 
+/* Fade-in for cards */
+.fade-in {
+    animation: fadeIn 360ms ease both;
+}
+
+/* Loading overlay */
+.loading-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.84);
+    border-radius: 12px;
+    z-index: 50;
+    padding: 2rem;
+}
+
+/* Keep spinner visible but subtle on mobile */
+.loading-overlay .spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
 /* Sticky Elements */
 .sticky-top {
     transition: var(--transition);
@@ -442,16 +842,59 @@ footer hr {
 }
 
 /* Search and Filter */
-.form-range {
+.filter-panel {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(226, 240, 255, 0.84));
+    border-radius: 28px;
+    border: 1px solid rgba(27, 101, 255, 0.16);
+    box-shadow: 0 28px 72px rgba(15, 47, 77, 0.08);
+    padding: 1.75rem 1.5rem;
+}
+
+.filter-panel .form-label {
+    color: var(--text-dark);
+}
+
+.filter-panel .form-control,
+.filter-panel .form-select {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(15, 47, 77, 0.1);
+    border-radius: 18px;
+    box-shadow: inset 0 1px 4px rgba(15, 47, 77, 0.04);
+}
+
+.filter-panel .form-control:hover,
+.filter-panel .form-select:hover {
+    border-color: rgba(27, 101, 255, 0.35);
+}
+
+.filter-panel .form-control:focus,
+.filter-panel .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(27, 101, 255, 0.14);
+}
+
+.filter-panel .form-range {
     height: 0.5rem;
+    margin-bottom: 0.35rem;
 }
 
-.form-range::-webkit-slider-thumb {
+.filter-panel .form-range::-webkit-slider-thumb {
     background-color: var(--primary-color);
 }
 
-.form-range::-moz-range-thumb {
+.filter-panel .form-range::-moz-range-thumb {
     background-color: var(--primary-color);
+}
+
+.filter-panel .btn-secondary {
+    background: rgba(27, 101, 255, 0.12);
+    color: var(--text-dark);
+    border: 1px solid rgba(27, 101, 255, 0.18);
+    box-shadow: 0 12px 30px rgba(15, 47, 77, 0.06);
+}
+
+.filter-panel .btn-secondary:hover {
+    background: rgba(27, 101, 255, 0.2);
 }
 
 /* Modal and Alerts */
@@ -544,5 +987,107 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #0b5ed7;
+    background: #002141;
+}
+
+/* Hero decoration and payment panel styles */
+.hero-shapes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.hero-shapes .shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.4;
+    filter: blur(18px);
+}
+
+.hero-shapes .shape-1 {
+    width: 180px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.35);
+    top: 20%;
+    left: 10%;
+}
+
+.hero-shapes .shape-2 {
+    width: 240px;
+    height: 240px;
+    background: rgba(179, 138, 65, 0.18);
+    bottom: 10%;
+    right: 15%;
+}
+
+.hero-shapes .shape-3 {
+    width: 140px;
+    height: 140px;
+    background: rgba(255, 255, 255, 0.16);
+    top: 35%;
+    right: 25%;
+}
+
+.hero-highlights .highlight-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    min-height: 220px;
+}
+
+.payment-section {
+    background: linear-gradient(135deg, #ffffff 40%, #c1e7ff 50%);
+    position: relative;
+    overflow: hidden;
+    padding: 2.2rem 0;
+}
+
+.payment-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 30%),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px) 0 0 / 40px 40px;
+    pointer-events: none;
+}
+
+.payment-section .payment-info {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.5rem;
+}
+
+
+.payment-card {
+    border: none;
+    background: #ffffff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1.25rem;
+}
+
+.payment-card img {
+    width: 90%;
+    max-width: 250px;
+    border-radius: 17px;
+    display: block;
+    margin: 0 auto;
+}
+
+.payment-section .payment-card p {
+    margin-top: 0.85rem;
+}
+
+#copyUpiBtn {
+    min-width: 180px;
+}
+
+.hero-section .btn-outline-light {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-section .btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.12);
 }

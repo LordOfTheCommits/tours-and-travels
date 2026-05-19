@@ -276,6 +276,322 @@
                 "Elephant sanctuary visit"
             ],
             "maxGroupSize": 32
+        },
+        {
+            "id": 11,
+            "name": "Golden Triangle Discovery",
+            "location": "Delhi",
+            "category": "Heritage",
+            "keywords": [
+                "delhi",
+                "agra",
+                "jaipur",
+                "golden triangle",
+                "north india",
+                "taj mahal"
+            ],
+            "duration": "6 days",
+            "price": 42000,
+            "image": "https://picsum.photos/500/400?random=11",
+            "rating": 4.8,
+            "reviews": 178,
+            "description": "Explore Delhi, Agra and Jaipur on a culturally rich journey with palace visits, sunrise Taj Mahal and heritage experiences.",
+            "itinerary": [
+                "Day 1: Arrive in Delhi. Old Delhi walking tour and spice market visit.",
+                "Day 2: Humayun's Tomb, Qutub Minar and India Gate.",
+                "Day 3: Travel to Agra. Sunset visit to the Taj Mahal.",
+                "Day 4: Agra Fort and transfer to Jaipur.",
+                "Day 5: Amber Fort, City Palace and local bazaar.",
+                "Day 6: Return to Delhi. Departure."
+            ],
+            "included": [
+                "5-star hotel stays",
+                "Daily breakfast",
+                "Private transport",
+                "Guided city tours",
+                "Taj Mahal entry fees",
+                "Airport transfers"
+            ],
+            "maxGroupSize": 28
+        },
+        {
+            "id": 12,
+            "name": "Goa Beach Weekend",
+            "location": "Goa",
+            "category": "Beach",
+            "keywords": [
+                "goa",
+                "beach",
+                "north goa",
+                "south goa",
+                "panaji",
+                "calangute"
+            ],
+            "duration": "4 days",
+            "price": 18500,
+            "image": "https://picsum.photos/500/400?random=12",
+            "rating": 4.7,
+            "reviews": 243,
+            "description": "Relax on Goa's famous beaches, enjoy seafood, sunset cruises, and vibrant coastal nightlife. Perfect for a quick rejuvenating escape.",
+            "itinerary": [
+                "Day 1: Arrive in Goa. Beachside welcome dinner.",
+                "Day 2: South Goa beaches and spice farm visit.",
+                "Day 3: North Goa beach hopping and sunset cruise.",
+                "Day 4: Local markets and departure."
+            ],
+            "included": [
+                "3-night beach resort stay",
+                "Daily breakfast",
+                "Sunset cruise",
+                "Seafood dinner",
+                "Local sightseeing",
+                "Airport transfers"
+            ],
+            "maxGroupSize": 30
+        },
+        {
+            "id": 13,
+            "name": "Kerala Backwaters Retreat",
+            "location": "Kerala",
+            "category": "Relaxation",
+            "keywords": [
+                "kerala",
+                "backwaters",
+                "kochi",
+                "houseboat",
+                "alleppey",
+                "trivandrum"
+            ],
+            "duration": "5 days",
+            "price": 24500,
+            "image": "https://picsum.photos/500/400?random=13",
+            "rating": 4.9,
+            "reviews": 189,
+            "description": "Cruise through Kerala's serene backwaters, stay in a houseboat, and enjoy traditional cuisine and lush green landscapes.",
+            "itinerary": [
+                "Day 1: Arrive in Kochi. Fort Kochi heritage walk.",
+                "Day 2: Board houseboat and cruise the backwaters.",
+                "Day 3: Village visit, spice market, and Kathakali performance.",
+                "Day 4: Munnar tea plantation tour.",
+                "Day 5: Return to Kochi. Departure."
+            ],
+            "included": [
+                "Houseboat stay",
+                "Daily meals",
+                "Guided village tour",
+                "Tea plantation visit",
+                "Cultural performance",
+                "Airport transfers"
+            ],
+            "maxGroupSize": 24
+        },
+        {
+            "id": 14,
+            "name": "Darjeeling Hill Station",
+            "location": "Darjeeling",
+            "category": "Hill Station",
+            "keywords": [
+                "darjeeling",
+                "toy train",
+                "west bengal",
+                "mirik",
+                "kolkata",
+                "calcutta"
+            ],
+            "duration": "5 days",
+            "price": 19800,
+            "image": "https://picsum.photos/500/400?random=14",
+            "rating": 4.8,
+            "reviews": 212,
+            "description": "Discover the tea gardens, Toy Train ride, and Himalayan views around Darjeeling on a peaceful mountain getaway.",
+            "itinerary": [
+                "Day 1: Arrive in Darjeeling. Evening stroll through the Mall Road.",
+                "Day 2: Tiger Hill sunrise and Batasia Loop.",
+                "Day 3: Visit tea estates and Himalayan Mountaineering Institute.",
+                "Day 4: Day trip to Mirik Lake.",
+                "Day 5: Local markets and departure."
+            ],
+            "included": [
+                "4-night hotel stay",
+                "Daily breakfast",
+                "Toy Train heritage ride",
+                "Tea garden tour",
+                "Local guided excursions",
+                "Airport transfers"
+            ],
+            "maxGroupSize": 22
+        },
+        {
+            "id": 15,
+            "name": "Rishikesh Adventure Escape",
+            "location": "Rishikesh",
+            "category": "Adventure",
+            "keywords": [
+                "rishikesh",
+                "ganges",
+                "rafting",
+                "yoga",
+                "haridwar",
+                "uttarakhand"
+            ],
+            "duration": "3 days",
+            "price": 13500,
+            "image": "https://picsum.photos/500/400?random=15",
+            "rating": 4.7,
+            "reviews": 164,
+            "description": "Experience river rafting, yoga by the Ganges, and forest camping in spiritual Rishikesh.",
+            "itinerary": [
+                "Day 1: Arrive in Rishikesh. Evening Ganga Aarti at Triveni Ghat.",
+                "Day 2: White-water rafting and beach camping.",
+                "Day 3: Yoga session and local sightseeing before departure."
+            ],
+            "included": [
+                "2-night riverside camp",
+                "Daily meals",
+                "Rafting adventure",
+                "Yoga and meditation session",
+                "Guided local tour",
+                "Transfers"
+            ],
+            "maxGroupSize": 20
+        },
+        {
+            "id": 16,
+            "name": "Jaipur Heritage & Palace Trail",
+            "location": "Jaipur",
+            "category": "Heritage",
+            "keywords": [
+                "jaipur",
+                "pink city",
+                "amber fort",
+                "rajasthan",
+                "amer"
+            ],
+            "duration": "4 days",
+            "price": 12800,
+            "image": "https://picsum.photos/500/400?random=16",
+            "rating": 4.7,
+            "reviews": 214,
+            "description": "Explore the Pink City's forts, palaces and bazaars with a local guide. Includes Amber Fort and City Palace visits.",
+            "itinerary": [
+                "Day 1: Arrival in Jaipur. Evening market walk and welcome dinner.",
+                "Day 2: Amber Fort and elephant ride experience. City Palace tour.",
+                "Day 3: Local bazaars, Jantar Mantar & Birla Temple.",
+                "Day 4: Free time and departure."
+            ],
+            "included": [
+                "3-night hotel stay",
+                "Daily breakfast",
+                "Guided tours",
+                "Entrance fees",
+                "Airport transfers"
+            ],
+            "maxGroupSize": 30
+        },
+        {
+            "id": 17,
+            "name": "Leh Ladakh Adventure",
+            "location": "Leh Ladakh",
+            "category": "Adventure",
+            "keywords": [
+                "leh",
+                "ladakh",
+                "pangong",
+                "nubra",
+                "chang la",
+                "high altitude"
+            ],
+            "duration": "7 days",
+            "price": 34500,
+            "image": "https://picsum.photos/500/400?random=17",
+            "rating": 4.9,
+            "reviews": 142,
+            "description": "A high-altitude adventure across some of India's most dramatic mountain landscapes: Pangong Lake, Nubra Valley and more.",
+            "itinerary": [
+                "Day 1: Arrive in Leh. Acclimatisation and local market visit.",
+                "Day 2: Leh sightseeing and monasteries.",
+                "Day 3: Drive to Pangong Lake. Overnight near the lake.",
+                "Day 4: Return to Leh via Chang La.",
+                "Day 5: Nubra Valley and camel ride in the sand dunes.",
+                "Day 6: Relaxation and local experiences.",
+                "Day 7: Departure."
+            ],
+            "included": [
+                "6-night accommodation",
+                "All ground transport",
+                "Daily breakfast",
+                "Local guide",
+                "Permits"
+            ],
+            "maxGroupSize": 18
+        },
+        {
+            "id": 18,
+            "name": "Manali Mountain Retreat",
+            "location": "Manali",
+            "category": "Hill Station",
+            "keywords": [
+                "manali",
+                "solang",
+                "rohtang",
+                "himachal",
+                "old manali"
+            ],
+            "duration": "5 days",
+            "price": 17800,
+            "image": "https://picsum.photos/500/400?random=18",
+            "rating": 4.6,
+            "reviews": 198,
+            "description": "A refreshing hill-station getaway in Manali with river valleys, mountain walks and optional adventure sports.",
+            "itinerary": [
+                "Day 1: Arrive in Manali. Leisure evening.",
+                "Day 2: Solang Valley adventure activities.",
+                "Day 3: Rohtang Pass day trip (seasonal).",
+                "Day 4: Old Manali walk and local experiences.",
+                "Day 5: Departure."
+            ],
+            "included": [
+                "4-night hotel stay",
+                "Daily breakfast",
+                "Local transfers",
+                "Adventure activities (optional)"
+            ],
+            "maxGroupSize": 28
+        },
+        {
+            "id": 19,
+            "name": "Andaman Island Escape",
+            "location": "Andaman",
+            "category": "Beach",
+            "keywords": [
+                "andaman",
+                "havelock",
+                "radhanagar",
+                "port blair",
+                "islands"
+            ],
+            "duration": "6 days",
+            "price": 26500,
+            "image": "https://picsum.photos/500/400?random=19",
+            "rating": 4.8,
+            "reviews": 167,
+            "description": "White sandy beaches, crystal clear waters and world-class snorkeling around Havelock and Radhanagar beach.",
+            "itinerary": [
+                "Day 1: Arrive in Port Blair. Cellular jail visit.",
+                "Day 2: Havelock Island transfer and Radhanagar Beach.",
+                "Day 3: Snorkeling and island hopping.",
+                "Day 4: Neil Island day trip.",
+                "Day 5: Local culture and relaxation.",
+                "Day 6: Departure."
+            ],
+            "included": [
+                "5-night island accommodation",
+                "Daily breakfast",
+                "Boat transfers",
+                "Snorkeling trips",
+                "Local guide"
+            ],
+            "maxGroupSize": 24
         }
     ]
 }
